@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
+import Co from "./Co";
+import CounterState from "./CounterState";
+import Day from "./Day";
+import Message from "./Message";
+import Room from "./Room";
 
 function App() {
+  let [number, setNumber] = useState(1);
+  let [num, setnum] = useState(1)
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Using State (Hooks)</h1>
+      <CounterState />
+
+      <Message  counter={number} />
+      <button onClick={()=>setNumber(number + 1)}>Number Updated</button>
+      <Day />
+      <br />
+      <Room />
+      <Co number={num} />
+      <button onClick={()=>setnum(num + 1)}>Number Updated</button>
     </div>
   );
 }
