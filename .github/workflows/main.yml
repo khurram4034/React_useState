@@ -39,4 +39,4 @@ jobs:
       run: sudo npm  install --global surge
       
     - name: Deploy surge
-      run: surge ./build use_state.surge.sh --token ${{secrets.USESTATE_TOKEN}}
+      run: surge ./build usesate-deploy.surge.sh --token ${{secrets.STATE_TOKEN}}
